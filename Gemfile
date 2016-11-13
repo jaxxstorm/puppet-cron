@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-group :development do
+group :test do
   gem "json"
   gem "rake"
   gem "puppet", ENV['PUPPET_VERSION'] || ' ~> 3.8.7'
