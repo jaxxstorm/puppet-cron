@@ -12,9 +12,19 @@ describe 'cron', :type => :class do
     }
   end
 
+  # defaults
   context 'defaults' do
     it { should compile }
   end
+  
+  context "should install cron package" do
+    it { should contain_package('cronie').with(:ensure => 'latest') }
+  end
+
+  context "should ensure service running" do
+    it { should contain_service('crond').with(:ensure => 'running', :enable => true) }
+  end
+
 
 end
 

@@ -9,4 +9,4 @@
 <%   end
    end -%>
 # Job definition
-<%= @minute %> <%= @hour %> <%= @day_of_month %> <%= @month %> <%= @day_of_week %> <%= @user %><% if @lock -%>flock -n "/var/lock/<%= @title%>.lock"<% end %> <%= @command %>
+<%= @minute %> <%= @hour %> <%= @day_of_month %> <%= @month %> <%= @day_of_week %> <%= @user %><% if @lock -%>flock -n "/var/lock/<%= @title %>.lock"<% end %> <%= @command %>

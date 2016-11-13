@@ -1,6 +1,6 @@
 # Define: cron::job
 # 
-# Generated a cron job in /etc/cron.d
+# Generate a cron job in /etc/cron.d
 define cron::job (
   $command,
   $ensure = 'present',
@@ -15,9 +15,9 @@ define cron::job (
 ) {
 
   file { "/etc/cron.d/job_${title}":
-    ensure => $ensure,
-    owner  => 'root',
-    group  => 'root',
+    ensure  => $ensure,
+    owner   => 'root',
+    group   => 'root',
     content => template('cron/job.erb'),
   }
 
