@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 group :test do
   gem "json"
   gem "rake"
-  gem "puppet", ENV['PUPPET_VERSION'] || ' ~> 3.8.3'
+  gem "puppet", ENV['PUPPET_VERSION'] || ' ~> 3.8.7'
   gem "puppet-lint"
 
   # Because ruby 1.8.7
