@@ -43,6 +43,37 @@ describe 'cron::job', :type => 'define'  do
       it { should contain_file('/etc/cron.d/job_test').with_content(/flock -n "\/var\/lock\/test.lock" \/bin\/true/) }
     end
 
+    context 'with monitoring' do
+      let(:params) {{
+        :command     => '/bin/true',
+        :monitor_job => true,
+      }}
+      it { is_expected.to contain_class('sensu_wrapper') }
+      it { should contain_file('/etc/cron.d/job_test').with_content(/\/usr\/local\/bin\/sensu-wrapper -n "cron_test" \/bin\/true/) }
+    end
+
+    context 'monitoring with options' do
+      let(:params) {{
+        :command          => '/bin/true',
+        :monitor_job      => true,
+        :monitor_ttl      => 10,
+        :monitor_source   => 'mysource',
+        :monitor_timeout  => 20,
+      }}
+      it { is_expected.to contain_class('sensu_wrapper') }
+      it { should contain_file('/etc/cron.d/job_test').with_content(/\/usr\/local\/bin\/sensu-wrapper -n "cron_test" -t 10 -s "mysource" -T 20 \/bin\/true/) }
+    end
+
+    context 'with monitoring and locking' do
+      let(:params) {{
+        :command     => '/bin/true',
+        :monitor_job => true,
+        :lock        => true,
+      }}
+      it { is_expected.to contain_class('sensu_wrapper') }
+      it { should contain_file('/etc/cron.d/job_test').with_content(/flock -n "\/var\/lock\/test.lock" \/usr\/local\/bin\/sensu-wrapper -n "cron_test" \/bin\/true/) }
+    end
+
   end # End default title context
 
 end
