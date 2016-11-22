@@ -76,13 +76,13 @@ This will create a cronjob file in `$crond_dir` (default: `/etc/cron.d`) which w
 ### Classes
 
 #### Public Classes
-  *[`cron`](#cron): Installs and configures cron in your environment.
-  *[`cron::job`](#cronjob): Installs and configures a cronjob in `$crond_dir`
+  * [`cron`](#cron): Installs and configures cron in your environment.
+  * [`cron::job`](#cronjob): Installs and configures a cronjob in `$crond_dir`
 
 #### Private Classes
-  *[`cron::install`]: Installs the required cron package
-  *[`cron::configure`]: Configures cron's required directories
-  *[`cron::service`]: Manages the cron service
+  * [`cron::install`]: Installs the required cron package
+  * [`cron::configure`]: Configures cron's required directories
+  * [`cron::service`]: Manages the cron service
   
 
 ### `cron`
