@@ -18,6 +18,11 @@
 
 This is yet another puppet-cron module. It will set up cron (by installed the package and making sure the service is running) and also includes a defined type which will put cron jobs in `/etc/cron.d`
 
+The `cron::job` type can:
+
+  - Set up locking, using `flock`, meaning cronjobs don't clobber each other
+  - If you use sensu, alert when they fail, using [sensu-wrapper](https://github.com/jaxxstorm/sensu-wrapper)
+
 This module has some similarities to Yelp's [puppet-cron](https://github.com/Yelp/puppet-cron) with the intention of being much simpler while still providing some of the cool stuff in that module
 
 ## Setup
