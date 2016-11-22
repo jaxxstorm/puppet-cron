@@ -8,6 +8,7 @@ group :development do
   gem "puppet-blacksmith"
   gem "serverspec"
   gem "vagrant-wrapper"
+  gem "puppet-strings"
 end
 
 group :test do

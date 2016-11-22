@@ -1,4 +1,20 @@
-# Sets up cron defaults
+# Install & manage cron
+#
+# @example Declaring the class
+#   include ::cron
+#
+# @param [String] package_name the cron package to install
+# @param [String] package_ensure the version of the cron package to install
+# @param [String] service_name the name of the cron service to manage
+# @param [String] service_ensure state of the cron service
+# @param [String] crontab_file path to the crontab file
+# @param [String] crond_dir path to the crond dir
+# @param [String] crond_hourly path to the crond hourly scripts dir
+# @param [String] crond_weekly path to the crond weekly scripts dir
+# @param [String] crond_weekly path to the crond monthly scripts dir
+# @param [String] user username to own the cron directories and files
+# @param [String] group group to own the cron directories and files
+# @param [String] purge whether to purge the contents of $crond_dir of resources not managed by Puppet
 class cron (
   $package_name   = $cron::params::package_name,
   $package_ensure = 'latest',
