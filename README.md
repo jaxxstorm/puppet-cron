@@ -62,7 +62,7 @@ Use the `cron::job` defined type:
 
 ```puppet
   ::cron::job {
-		minute => '02',
+    minute => '02',
     hour   => '1',
     lock   => true
   }
