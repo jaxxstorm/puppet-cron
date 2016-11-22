@@ -13,6 +13,7 @@ class cron::params {
       $crond_monthly  = '/etc/cron.monthly'
       $user           = 'root'
       $group          = 'root'
+      $purge          = false
     }
     'Debian', 'Ubuntu': {
       $package_name   = 'cron'
@@ -25,6 +26,7 @@ class cron::params {
       $crond_monthly  = '/etc/cron.monthly'
       $user           = 'root'
       $group          = 'root'
+      $purge          = false
     }
     default: { fail('Unsupported OS') }
   }

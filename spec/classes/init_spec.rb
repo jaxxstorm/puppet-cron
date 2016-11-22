@@ -37,6 +37,13 @@ describe 'cron', :type => :class do
     it { should contain_file('/etc/cron.monthly').with(:ensure => 'directory', :owner=> 'root', :group => 'root', :mode => '0700') }
   end
 
+  context "with purge enabled" do
+    let(:params) {{
+      :purge => true
+    }}
+    it { should contain_file('/etc/cron.d').with(:ensure => 'directory', :owner=> 'root', :group => 'root', :mode => '0700', :recurse => true, :purge => true) }
+  end
+
 
 end
 
