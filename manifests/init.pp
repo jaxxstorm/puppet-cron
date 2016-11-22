@@ -12,6 +12,7 @@ class cron (
   $crond_monthly  = $cron::params::crond_monthly,
   $user           = $cron::params::user,
   $group          = $cron::params::group,
+  $purge          = $cron::params::purge,
 ) inherits cron::params {
 
   validate_re($service_ensure, '^(running|stopped)$')

@@ -14,6 +14,8 @@ class cron::config {
     owner   => $cron::user,
     group   => $cron::group,
     mode    => '0700',
+    purge   => $cron::purge,
+    recurse => $cron::purge,
     require => Package[$cron::package_name]
   }
 
