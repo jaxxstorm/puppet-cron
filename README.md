@@ -89,55 +89,55 @@ This will create a cronjob file in `$crond_dir` (default: `/etc/cron.d`) which w
 
 #### Parameters
 
-##### `package_name`
+##### `package_name` [String]
 
 Specifies the package to install for cron
 
-##### `package_ensure`
+##### `package_ensure` [String]
 
 Specifies the version of the cron package to install (default: os dependent)
 
-##### `service_name`
+##### `service_name` [String]
 
 Specifies the cron service to manage (default: latest)
 
-##### `service_ensure`
+##### `service_ensure` [String]
 
 Specifies the state of the cron service (running, stopped - default: running)
 
-##### `service_enable`
+##### `service_enable` [Bool]
 
 Specifies whether the crond service should be enabled on startup (true, false - default: true)
 
-##### `crontab_file`
+##### `crontab_file` [String]
 
 Specifies the path to the OS crontab file (default: os dependent)
 
-##### `crond_dir`
+##### `crond_dir` [String]
 
 Specifies the path to the cron.d dir (default: `/etc/cron.d`)
 
-##### `crond_hourly`
+##### `crond_hourly` [String]
 
 Specifies the path to the cron.hourly scripts directory (default: `/etc/cron.hourly`)
 
-##### `crond_weekly`
+##### `crond_weekly` [String]
 
 Specifies the path to the cron.weekly scripts directory (default: `/etc/cron.weekly`)
 
-##### `crond_monthly`
+##### `crond_monthly` [String]
 
 Specifies the path to the cron.monthly scripts directory (default: `/etc/cron.monthly`)
 
-##### `user`
+##### `user` [String]
 
 Specifies the user to own the crond dirs and files (default: 'root' - _CHANGE WITH CAUTION_)
 
-##### `group`
+##### `group` [String]
 
 Specifies the group to own the crond dirs and files (default: 'root' - _CHANGE WITH CAUTION_)
 
-##### `purge`
+##### `purge` [Bool]
 
 Specifies whether to purge the $crond_dir directory of jobs not specified by puppet (default: false)
 
@@ -146,6 +146,61 @@ Specifies whether to purge the $crond_dir directory of jobs not specified by pup
 
 #### Parameters
 
-Coming soon
+##### `command` [String]
+
+Specifies the command to run in the job (required)
+
+##### `ensure` [String]
+
+Specifies whether the job should exist or not (default: present)
+
+##### `minute` [String]
+
+Specifies the cron style minute the job should run (default: '*')
+
+##### `hour` [String]
+
+Specifies the cron style hour the should run (default: '*')
+
+##### `day_of_month` [String]
+
+Specifies the cron style day of the month the job should run (default: '*')
+
+##### `month` [String]
+
+Specifies the cron style montht the job should run (default: '*')
+
+##### `day_of_week` [String]
+
+Specifies the cron style day of the week the job should run (default: '*')
+
+##### `user` [String]
+
+Specifies the user the cron job should run as (default: 'root')
+
+##### `environment` [Array]
+
+Specifies an array of environment variables for the job in fhe format `ENV=value` (default: [])
+
+##### `lock` [Bool]
+
+Specifies whether the cron job should lock itself using `flock` (default: false)
+
+##### `monitor_job` [Bool]
+
+Specifies whether you want to monitor the job using sensu-wrapper (default: undef)
+
+##### `monitor_ttl` [Integer]
+
+Specifies a TTL for the job for sensu-wrapper (default: undef)
+
+##### `monitor_source` [String]
+
+Specifies a source string for the alert generated in sensu (default: undef)
+
+##### `monitor_timeout` [Integer]
+
+Specifies a timeout for sensu-wrapper before the job should halt and fail (default: undef)
+
 
 ## Limitations
