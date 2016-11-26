@@ -1,6 +1,6 @@
 {
   "name": "jaxxstorm-cron",
-  "version": "0.1",
+  "version": "0.1.0",
   "author": "jaxxstorm",
   "summary": "Yet another cron module",
   "license": "MIT",
