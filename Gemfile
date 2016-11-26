@@ -28,4 +28,5 @@ group :test do
   gem "hiera-puppet-helper"
   gem "puppet-blacksmith"
   gem "serverspec"
+  gem "net-ssh", "~> 3.1.1"
 end
