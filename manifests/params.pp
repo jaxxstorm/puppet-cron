@@ -1,8 +1,8 @@
 # Private params class
 class cron::params {
 
-  case $::operatingsystem {
-    'RedHat', 'CentOS': {
+  case $::osfamily {
+    'RedHat': {
       $package_name   = 'cronie'
       $service_name   = 'crond'
       $crontab_file   = '/etc/crontab'
@@ -15,7 +15,7 @@ class cron::params {
       $group          = 'root'
       $purge          = false
     }
-    'Debian', 'Ubuntu': {
+    'Debian': {
       $package_name   = 'cron'
       $service_name   = 'cron'
       $crontab_file   = '/etc/crontab'
