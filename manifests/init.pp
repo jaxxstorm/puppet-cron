@@ -17,7 +17,7 @@
 # @param [String] purge whether to purge the contents of $crond_dir of resources not managed by Puppet
 class cron (
   $package_name   = $cron::params::package_name,
-  $package_ensure = 'latest',
+  $package_ensure = 'installed',
   $service_name   = $cron::params::service_name,
   $service_ensure = 'running',
   $service_enable = true,

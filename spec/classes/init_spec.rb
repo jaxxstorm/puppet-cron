@@ -18,7 +18,7 @@ describe 'cron', :type => :class do
   end
   
   context "should install cron package" do
-    it { should contain_package('cronie').with(:ensure => 'latest') }
+    it { should contain_package('cronie').with(:ensure => 'installed') }
   end
 
   context "should ensure service running" do
