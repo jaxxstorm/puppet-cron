@@ -204,7 +204,11 @@ Specifies a timeout for sensu-wrapper before the job should halt and fail (defau
 
 ##### `monitor_json` [String]
 
-Specifies additional json to include in the sensu-wrapper output. (default: undef)
+Specifies additional json to include in the sensu-wrapper output (default: undef)
+
+##### `monitor_handler` [String]
+
+Specifies a handler for sensu-wrapper to use when creating event (default: undef)
 
 
 ## Limitations

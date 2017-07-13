@@ -9,4 +9,4 @@
 <%   end
    end -%>
 # Job definition
-<%= @minute %> <%= @hour %> <%= @day_of_month %> <%= @month %> <%= @day_of_week %> <%= @user %><% if @lock -%> flock -n "/var/lock/<%= @title %>.lock"<% end %><% if @monitor_job -%> /usr/local/bin/sensu-wrapper -n "cron_<%= @title %>"<% if @monitor_ttl -%> -t <%= @monitor_ttl %><% end %><% if @monitor_source -%> -s "<%= @monitor_source %>"<% end %><% if @monitor_timeout -%> -T <%= @monitor_timeout %><% end %><% if @monitor_json -%> -j '<%= @monitor_json %>'<% end %><% end %> <%= @command %>
+<%= @minute %> <%= @hour %> <%= @day_of_month %> <%= @month %> <%= @day_of_week %> <%= @user %><% if @lock -%> flock -n "/var/lock/<%= @title %>.lock"<% end %><% if @monitor_job -%> /usr/local/bin/sensu-wrapper -n "cron_<%= @title %>"<% if @monitor_ttl -%> -t <%= @monitor_ttl %><% end %><% if @monitor_source -%> -s "<%= @monitor_source %>"<% end %><% if @monitor_timeout -%> -T <%= @monitor_timeout %><% end %><% if @monitor_json -%> -j '<%= @monitor_json %>'<% end %><% if @monitor_handler -%> -H <%= @monitor_handler %> <% end %><% end %> <%= @command %>
