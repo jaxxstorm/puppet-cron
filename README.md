@@ -202,5 +202,9 @@ Specifies a source string for the alert generated in sensu (default: undef)
 
 Specifies a timeout for sensu-wrapper before the job should halt and fail (default: undef)
 
+##### `monitor_json` [String]
+
+Specifies additional json to include in the sensu-wrapper output. (default: undef)
+
 
 ## Limitations
