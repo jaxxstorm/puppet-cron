@@ -2,6 +2,16 @@ require 'spec_helper'
 
 describe 'cron::job', :type => 'define'  do
 
+	RSpec.configure do |c|
+    c.default_facts = {
+      :architecture           => 'x86_64',
+      :operatingsystem        => 'CentOS',
+      :osfamily               => 'RedHat',
+      :operatingsystemrelease => '6.6',
+      :kernel                 => 'Linux',
+    }
+  end
+
   context 'with title set' do
     let(:title) { 'test' } # Set the default defined type title
 

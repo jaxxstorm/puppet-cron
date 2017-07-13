@@ -4,6 +4,8 @@ fixtures:
       repo: "https://github.com/puppetlabs/puppetlabs-stdlib.git"
       ref: "4.13.1"
     sensu_wrapper: "https://github.com/jaxxstorm/puppet-sensu_wrapper.git"
-    archive: "https://github.com/voxpupuli/puppet-archive.git"
+    archive: 
+      repo: "https://github.com/voxpupuli/puppet-archive.git"
+      ref: "v1.3.0"
   symlinks:
     cron: "#{source_dir}"
