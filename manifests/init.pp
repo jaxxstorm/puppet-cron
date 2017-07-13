@@ -35,10 +35,9 @@ class cron (
   validate_bool($service_enable)
 
   anchor { 'cron_first': }
-  ->
-  class { 'cron::install': } ->
-  class { 'cron::config': } ->
-  class { 'cron::service': } ->
-  anchor { 'cron_final': }
+  -> class { 'cron::install': }
+  -> class { 'cron::config': }
+  -> class { 'cron::service': }
+  -> anchor { 'cron_final': }
 
 }
