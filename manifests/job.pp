@@ -21,6 +21,7 @@
 # @param [String] monitor_source Specifies a TTL for the job for sensu-wrapper
 # @param [String] monitor_timeout Specifies a timeout for sensu-wrapper before the job should halt and fail
 # @param [String] monitor_json Specifies extra json for sensu-wrapper to include in the output
+# @param [String] monitor_handler Specifies the handler for sensu-wrapper to use
 define cron::job (
   $command,
   $ensure = 'present',
@@ -37,6 +38,7 @@ define cron::job (
   $monitor_source = undef,
   $monitor_timeout = undef,
   $monitor_json = undef,
+  $monitor_handler = undef
 ) {
 
   if $monitor_job {
